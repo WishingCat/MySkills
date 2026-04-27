@@ -1,0 +1,114 @@
+# Nature-style matplotlib stylesheet
+# 来自 nature-figure-style skill — 见 SKILL.md
+# 经验依据：本项目 figures_extracted/ 中 22 篇 Nature / Nature Photonics 论文的实证观察。
+# 使用：plt.style.use('<path-to>/nature.mplstyle')
+
+# ---- 字体 ----
+font.family         : sans-serif
+font.sans-serif     : Helvetica, Arial, Liberation Sans, DejaVu Sans
+font.size           : 7
+
+# ---- 图整体 ----
+figure.figsize      : 3.5, 2.6
+figure.dpi          : 110
+figure.facecolor    : white
+figure.edgecolor    : white
+figure.constrained_layout.use : True
+
+# ---- 保存 ----
+savefig.dpi         : 300
+savefig.bbox        : tight
+savefig.pad_inches  : 0.02
+savefig.facecolor   : white
+savefig.transparent : False
+
+# ---- 坐标轴 ----
+# 实证默认：Nature Photonics 2024-2025 的多数面板（谱图、log-log、polar、密集时间序列）
+# 都用四面闭合方框。如果是简洁的折线图想要"开放感"，调用代码里再单独
+# ax.spines[['top','right']].set_visible(False)。
+axes.linewidth      : 0.6
+axes.labelsize      : 8
+axes.labelweight    : normal
+axes.labelpad       : 3.0
+axes.titlesize      : 8
+axes.titleweight    : bold
+axes.titlepad       : 4.0
+axes.spines.top     : True
+axes.spines.right   : True
+axes.spines.left    : True
+axes.spines.bottom  : True
+axes.edgecolor      : 222222
+axes.labelcolor     : 222222
+axes.grid           : False
+axes.axisbelow      : True
+axes.unicode_minus  : True
+
+# ---- Tick ----
+# 实证：22 篇里 100% 用 inward ticks（哪怕 L+B 半框面板也是 in）。
+xtick.direction     : in
+ytick.direction     : in
+xtick.major.size    : 3.0
+ytick.major.size    : 3.0
+xtick.major.width   : 0.6
+ytick.major.width   : 0.6
+xtick.minor.size    : 1.6
+ytick.minor.size    : 1.6
+xtick.minor.width   : 0.5
+ytick.minor.width   : 0.5
+xtick.minor.visible : True
+ytick.minor.visible : True
+# 当四面闭合时 Nature 习惯把 tick 也镜像到上/右两侧
+xtick.top           : True
+ytick.right         : True
+xtick.labelsize     : 7
+ytick.labelsize     : 7
+xtick.color         : 222222
+ytick.color         : 222222
+xtick.major.pad     : 2.5
+ytick.major.pad     : 2.5
+
+# ---- Legend ----
+legend.frameon      : False
+legend.fontsize     : 6.5
+legend.handlelength : 1.5
+legend.handletextpad: 0.4
+legend.labelspacing : 0.3
+legend.columnspacing: 1.0
+legend.borderpad    : 0.2
+legend.borderaxespad: 0.5
+
+# ---- 数据线 ----
+lines.linewidth     : 1.0
+lines.markersize    : 3.5
+lines.markeredgewidth : 0.6
+lines.solid_capstyle: round
+lines.dash_capstyle : round
+
+# ---- Patch / 填充 ----
+patch.linewidth     : 0.5
+patch.edgecolor     : 222222
+patch.force_edgecolor : False
+
+# ---- Grid（默认关，需要时显式开）----
+grid.linewidth      : 0.3
+grid.color          : DCDCDC
+grid.linestyle      : --
+grid.alpha          : 0.6
+
+# ---- 颜色循环 ----
+# 默认 = "Nature Photonics modern 5"（Yao 2025 / Jin 2025 / Kalinin 2025 复用率最高）
+# 红 → 橙 → 黄 → 青 → 深蓝；高级感来自饱和度而非纯度。
+# 想要老 NPG 8 色（Cell / Methods / Reviews）请 setup_nature_style("nature_journal")。
+axes.prop_cycle     : cycler('color', ['E63946', 'F4A261', 'E9C46A', '2A9D8F', '264653', '7E3FA8', 'F46197', '888888'])
+
+# ---- 误差棒 ----
+errorbar.capsize    : 2
+
+# ---- 文本 ----
+text.color          : 222222
+mathtext.fontset    : dejavusans
+mathtext.default    : it
+
+# ---- PDF / PS 嵌入字体（投稿必须）----
+pdf.fonttype        : 42
+ps.fonttype         : 42
