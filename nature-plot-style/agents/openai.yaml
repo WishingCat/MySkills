@@ -1,4 +1,0 @@
-interface:
-  display_name: "Nature Plot Style"
-  short_description: "Generate scientific figures in your lab's compact publication style"
-  default_prompt: "Use $nature-plot-style to generate or restyle a scientific figure so it matches the dominant plotting style distilled from /Users/wishingcat/Research/Nature 绘图."
